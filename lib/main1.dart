@@ -1,3 +1,5 @@
+//Isso aqui não faz parte do projeto, só é um arquivo que já vem com a criação de um projeto em flutter e serve só pra auxiliar o aprendizado de alguma forma.
+
 import 'package:flutter/material.dart';
 
 void main() {
