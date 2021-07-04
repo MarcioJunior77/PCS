@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pcs/ChatSection/TopBar.dart';
 
-import 'ChatSection/Chat.dart';
+import 'ChatSection/ChatPage.dart';
 // import 'package:pcs/topBar.dart';
 // import 'package:pcs/Input.dart';
 
@@ -32,6 +33,7 @@ class MainPage extends StatelessWidget {
           ),
         ],
       ),
+      appBar: TopBar(),
       body: Chat(),
     );
   }
