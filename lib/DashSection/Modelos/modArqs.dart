@@ -1,4 +1,4 @@
-import 'package:DashSection/Constantes.dart';
+import '../Constantes.dart';
 import 'package:flutter/material.dart';
 
 class CloudStorageInfo {

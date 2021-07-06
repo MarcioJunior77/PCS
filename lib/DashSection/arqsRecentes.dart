@@ -1,8 +1,8 @@
-import 'package:Modelos/modArqNovo.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'Modelos/modArqNovo.dart';
 import 'Constantes.dart';
 
 class RecentFiles extends StatelessWidget {

@@ -1,5 +1,5 @@
-import 'package:controleMenu.dart';
-import 'package:Responsividade.dart';
+import 'controleMenu.dart';
+import 'Responsividade.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';

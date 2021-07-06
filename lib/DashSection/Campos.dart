@@ -1,9 +1,9 @@
-import 'package:Modelos/modArqs.dart';
-import 'package:Responsividade.dart';
 import 'package:flutter/material.dart';
 
 import 'Constantes.dart';
 import 'cardArqs.dart';
+import 'Modelos/modArqs.dart';
+import 'Responsividade.dart';
 
 class MyFiles extends StatelessWidget {
   const MyFiles({
