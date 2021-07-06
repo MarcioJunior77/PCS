@@ -20,7 +20,7 @@ List demoMyFiles = [
   CloudStorageInfo(
     title: "Documents",
     numOfFiles: 1328,
-    svgSrc: "assets/icons/Documents.svg",
+    svgSrc: "../images/icons/Documents.svg",
     totalStorage: "1.9GB",
     color: primaryColor,
     percentage: 35,
@@ -28,7 +28,7 @@ List demoMyFiles = [
   CloudStorageInfo(
     title: "Google Drive",
     numOfFiles: 1328,
-    svgSrc: "assets/icons/google_drive.svg",
+    svgSrc: "../images/icons/google_drive.svg",
     totalStorage: "2.9GB",
     color: Color(0xFFFFA113),
     percentage: 35,
@@ -36,7 +36,7 @@ List demoMyFiles = [
   CloudStorageInfo(
     title: "One Drive",
     numOfFiles: 1328,
-    svgSrc: "assets/icons/one_drive.svg",
+    svgSrc: "../images/icons/one_drive.svg",
     totalStorage: "1GB",
     color: Color(0xFFA4CDFF),
     percentage: 10,
@@ -44,7 +44,7 @@ List demoMyFiles = [
   CloudStorageInfo(
     title: "Documents",
     numOfFiles: 5328,
-    svgSrc: "assets/icons/drop_box.svg",
+    svgSrc: "../images/icons/drop_box.svg",
     totalStorage: "7.3GB",
     color: Color(0xFF007EE5),
     percentage: 78,

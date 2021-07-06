@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pcs/ChatSection/TopBar.dart';
 
 import 'ChatSection/ChatPage.dart';
+import 'DashSection/Dash.dart';
 // import 'package:pcs/topBar.dart';
 // import 'package:pcs/Input.dart';
 
@@ -21,20 +22,20 @@ class MainPage extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.message),
-            title: Text("Chat"),
+            label: "Chat",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.assignment_rounded),
-            title: Text("To-do-list"),
+            label: "To-do-list",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bar_chart_sharp),
-            title: Text("Monitoramento"),
+            label: "Monitoramento",
           ),
         ],
       ),
       appBar: TopBar(),
-      body: Chat(),
+      body: DashboardScreen(),
     );
   }
 }

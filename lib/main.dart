@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:pcs/ChatSection/ChatPage.dart';
 import 'package:pcs/MainPage.dart';
 
 void main() {

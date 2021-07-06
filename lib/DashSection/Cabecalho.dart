@@ -55,7 +55,7 @@ class ProfileCard extends StatelessWidget {
       child: Row(
         children: [
           Image.asset(
-            "assets/images/profile_pic.png",
+            "../images/profile_pic.png",
             height: 38,
           ),
           if (!Responsive.isMobile(context))
@@ -96,7 +96,7 @@ class SearchField extends StatelessWidget {
               color: primaryColor,
               borderRadius: const BorderRadius.all(Radius.circular(10)),
             ),
-            child: SvgPicture.asset("assets/icons/Search.svg"),
+            child: SvgPicture.asset("../images/icons/Search.svg"),
           ),
         ),
       ),
