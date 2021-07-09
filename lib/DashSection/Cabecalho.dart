@@ -1,8 +1,6 @@
-import 'controleMenu.dart';
 import 'Responsividade.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 
 import 'Constantes.dart';
 
@@ -15,14 +13,9 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        if (!Responsive.isDesktop(context))
-          IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: context.read<MenuController>().controlMenu,
-          ),
         if (!Responsive.isMobile(context))
           Text(
-            "Dashboard",
+            "Estatísticas e Monitoramento",
             style: Theme.of(context).textTheme.headline6,
           ),
         if (!Responsive.isMobile(context))
@@ -62,7 +55,7 @@ class ProfileCard extends StatelessWidget {
             Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-              child: Text("Angelina Joli"),
+              child: Text("NOME_TESTE"),
             ),
           Icon(Icons.keyboard_arrow_down),
         ],

@@ -1,10 +1,9 @@
-import 'package:pcs/DashSection/Responsividade.dart';
-import 'package:pcs/DashSection/Campos.dart';
 import 'package:flutter/material.dart';
 
 import 'Constantes.dart';
 import 'Cabecalho.dart';
-
+import 'Responsividade.dart';
+import 'Campos.dart';
 import 'arqsRecentes.dart';
 import 'detalhesArmz.dart';
 
