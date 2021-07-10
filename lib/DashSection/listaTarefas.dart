@@ -1,12 +1,11 @@
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
-import 'Modelos/modArqNovo.dart';
+import 'Modelos/modTarefas.dart';
 import 'Constantes.dart';
 
-class RecentFiles extends StatelessWidget {
-  const RecentFiles({
+class TarefaNova extends StatelessWidget {
+  const TarefaNova({
     Key? key,
   }) : super(key: key);
 
@@ -22,7 +21,7 @@ class RecentFiles extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Recent Files",
+            "Tarefas",
             style: Theme.of(context).textTheme.subtitle1,
           ),
           SizedBox(
@@ -32,18 +31,18 @@ class RecentFiles extends StatelessWidget {
               minWidth: 600,
               columns: [
                 DataColumn(
-                  label: Text("File Name"),
+                  label: Text("Nome"),
                 ),
                 DataColumn(
-                  label: Text("Date"),
+                  label: Text("Prazo"),
                 ),
                 DataColumn(
-                  label: Text("Size"),
+                  label: Text("Prioridade"),
                 ),
               ],
               rows: List.generate(
-                demoRecentFiles.length,
-                (index) => recentFileDataRow(demoRecentFiles[index]),
+                listatarefas.length,
+                (index) => TarefaNovaDataRow(listatarefas[index]),
               ),
             ),
           ),
@@ -53,26 +52,21 @@ class RecentFiles extends StatelessWidget {
   }
 }
 
-DataRow recentFileDataRow(RecentFile fileInfo) {
+DataRow TarefaNovaDataRow(Tarefa info) {
   return DataRow(
     cells: [
       DataCell(
         Row(
           children: [
-            SvgPicture.asset(
-              fileInfo.icon!,
-              height: 30,
-              width: 30,
-            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-              child: Text(fileInfo.title!),
+              child: Text(info.nome!),
             ),
           ],
         ),
       ),
-      DataCell(Text(fileInfo.date!)),
-      DataCell(Text(fileInfo.size!)),
+      DataCell(Text(info.fim!)),
+      DataCell(Text(info.prioridade!)),
     ],
   );
 }

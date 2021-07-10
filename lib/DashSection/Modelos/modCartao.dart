@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import '../Constantes.dart';
 
-import 'Constantes.dart';
-
-class StorageInfoCard extends StatelessWidget {
-  const StorageInfoCard({
-    Key? key,
-    required this.title,
-    required this.svgSrc,
-    required this.amountOfFiles,
-    required this.numOfFiles,
-  }) : super(key: key);
-
-  final String title, svgSrc, amountOfFiles;
-  final int numOfFiles;
+class CartaoTarefas extends StatelessWidget {
+  String? prioridade;
+  int? feitos, total;
+  //Construtor
+  CartaoTarefas(String prioridade, int feitos, int total) {
+    this.prioridade = prioridade;
+    this.feitos = feitos;
+    this.total = total;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +24,6 @@ class StorageInfoCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          SizedBox(
-            height: 20,
-            width: 20,
-            child: SvgPicture.asset(svgSrc),
-          ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
@@ -40,22 +31,22 @@ class StorageInfoCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
+                    "$prioridade",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    "$numOfFiles Files",
+                    "$feitos Tarefas",
                     style: Theme.of(context)
                         .textTheme
                         .caption!
-                        .copyWith(color: Colors.white70),
+                        .copyWith(color: Colors.black),
                   ),
                 ],
               ),
             ),
           ),
-          Text(amountOfFiles)
+          Text("$total")
         ],
       ),
     );

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'Constantes.dart';
-import 'cardArqs.dart';
-import 'Modelos/modArqs.dart';
+import 'cardTarefas.dart';
+import 'Modelos/modTarefas.dart';
 import 'Responsividade.dart';
 
-class MyFiles extends StatelessWidget {
-  const MyFiles({
+class MinhasTarefas extends StatelessWidget {
+  const MinhasTarefas({
     Key? key,
   }) : super(key: key);
 
@@ -23,12 +23,12 @@ class MyFiles extends StatelessWidget {
         ),
         SizedBox(height: defaultPadding),
         Responsive(
-          mobile: FileInfoCardGridView(
+          mobile: InfoTarefaCardGridView(
             crossAxisCount: _size.width < 650 ? 2 : 4,
             childAspectRatio: _size.width < 650 ? 1.3 : 1,
           ),
-          tablet: FileInfoCardGridView(),
-          desktop: FileInfoCardGridView(
+          tablet: InfoTarefaCardGridView(),
+          desktop: InfoTarefaCardGridView(
             childAspectRatio: _size.width < 1400 ? 1.1 : 1.4,
           ),
         ),
@@ -37,8 +37,8 @@ class MyFiles extends StatelessWidget {
   }
 }
 
-class FileInfoCardGridView extends StatelessWidget {
-  const FileInfoCardGridView({
+class InfoTarefaCardGridView extends StatelessWidget {
+  const InfoTarefaCardGridView({
     Key? key,
     this.crossAxisCount = 4,
     this.childAspectRatio = 1,
@@ -52,14 +52,15 @@ class FileInfoCardGridView extends StatelessWidget {
     return GridView.builder(
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: demoMyFiles.length,
+      itemCount: listatarefas.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
         crossAxisSpacing: defaultPadding,
         mainAxisSpacing: defaultPadding,
         childAspectRatio: childAspectRatio,
       ),
-      itemBuilder: (context, index) => FileInfoCard(info: demoMyFiles[index]),
+      itemBuilder: (context, index) =>
+          TarefaInfoCard(info: listatarefas[index]),
     );
   }
 }

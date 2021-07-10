@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:pcs/DashSection/cardTarefas.dart';
 
 import 'Constantes.dart';
 import 'Cabecalho.dart';
 import 'Responsividade.dart';
 import 'Campos.dart';
-import 'arqsRecentes.dart';
-import 'detalhesArmz.dart';
+import 'listaTarefas.dart';
+import 'detalhesTarefas.dart';
 
 class DashboardScreen extends StatelessWidget {
   @override
@@ -24,12 +25,11 @@ class DashboardScreen extends StatelessWidget {
                   flex: 5,
                   child: Column(
                     children: [
-                      MyFiles(),
                       SizedBox(height: defaultPadding),
-                      RecentFiles(),
+                      TarefaNova(),
                       if (Responsive.isMobile(context))
                         SizedBox(height: defaultPadding),
-                      if (Responsive.isMobile(context)) StarageDetails(),
+                      if (Responsive.isMobile(context)) DetalhesTarefas(),
                     ],
                   ),
                 ),
@@ -39,7 +39,7 @@ class DashboardScreen extends StatelessWidget {
                 if (!Responsive.isMobile(context))
                   Expanded(
                     flex: 2,
-                    child: StarageDetails(),
+                    child: DetalhesTarefas(),
                   ),
               ],
             )
