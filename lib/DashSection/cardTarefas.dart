@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 import 'Modelos/modTarefas.dart';
-import 'Modelos/modCartao.dart';
 import 'Constantes.dart';
 
 class TarefaInfoCard extends StatelessWidget {
@@ -29,10 +27,6 @@ class TarefaInfoCard extends StatelessWidget {
             info.nome!,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-          ),
-          ProgressLine(
-            color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
-            percentage: 100,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

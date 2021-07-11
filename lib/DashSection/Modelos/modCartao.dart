@@ -36,7 +36,7 @@ class CartaoTarefas extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    "$feitos Tarefas",
+                    "$feitos Tarefas Finalizadas",
                     style: Theme.of(context)
                         .textTheme
                         .caption!
@@ -46,7 +46,7 @@ class CartaoTarefas extends StatelessWidget {
               ),
             ),
           ),
-          Text("$total")
+          Text("Total: $total")
         ],
       ),
     );

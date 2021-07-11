@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pcs/DashSection/cardTarefas.dart';
 
 import 'Constantes.dart';
 import 'Cabecalho.dart';
 import 'Responsividade.dart';
-import 'Campos.dart';
 import 'listaTarefas.dart';
 import 'detalhesTarefas.dart';
 
