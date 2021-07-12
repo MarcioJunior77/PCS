@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'Constantes.dart';
 import 'Cabecalho.dart';
 import 'Responsividade.dart';
-import 'listaTarefas.dart';
+import 'arqsRecentes.dart';
 import 'detalhesTarefas.dart';
 
 class DashboardScreen extends StatelessWidget {

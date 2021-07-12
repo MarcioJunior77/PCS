@@ -21,7 +21,7 @@ class TarefaNova extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Tarefas",
+            "Tarefas Recentes",
             style: Theme.of(context).textTheme.subtitle1,
           ),
           SizedBox(
@@ -41,7 +41,7 @@ class TarefaNova extends StatelessWidget {
                 ),
               ],
               rows: List.generate(
-                listatarefas.length,
+                3,
                 (index) => TarefaNovaDataRow(listatarefas[index]),
               ),
             ),

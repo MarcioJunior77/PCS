@@ -28,14 +28,14 @@ class Chart extends StatelessWidget {
               children: [
                 SizedBox(height: defaultPadding),
                 Text(
-                  "29.1",
+                  "14",
                   style: Theme.of(context).textTheme.headline4!.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                         height: 0.5,
                       ),
                 ),
-                Text("of 128GB")
+                Text("/ 38 Tarefas")
               ],
             ),
           ),
@@ -66,7 +66,7 @@ List<PieChartSectionData> paiChartSelectionDatas = [
   ),
   PieChartSectionData(
     color: Color(0xFFEE2727),
-    value: 15,
+    value: 30,
     showTitle: false,
     radius: 16,
   ),
