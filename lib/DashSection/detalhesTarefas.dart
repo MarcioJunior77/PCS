@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'Constantes.dart';
-import 'Grafico.dart';
-import 'Modelos/modCartao.dart';
+import 'graficoTarefas.dart';
+import 'Modelos/modCartaoTarefas.dart';
 
 class DetalhesTarefas extends StatelessWidget {
   const DetalhesTarefas({
@@ -29,7 +29,7 @@ class DetalhesTarefas extends StatelessWidget {
             ),
           ),
           SizedBox(height: defaultPadding),
-          Chart(),
+          ChartTarefas(),
           CartaoTarefas("Alta", 5, 10),
           CartaoTarefas("Média", 1, 20),
           CartaoTarefas("Baixa", 8, 8),
