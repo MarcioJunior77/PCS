@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:simples/db.dart';
-import 'package:simples/todo_item.dart';
+import 'package:pcs/To-do-list/db.dart';
+import 'package:pcs/To-do-list/todo_item.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DB.init();
   runApp(MyApp());
@@ -33,13 +33,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
   List<ToDoItem> _todo = [];
   List<Widget> get _items => _todo.map((item) => format(item)).toList();
   late String _name;
   late int _id;
 
-  Widget format(ToDoItem item){
+  Widget format(ToDoItem item) {
     return Padding(
       padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
       child: Dismissible(
@@ -47,83 +46,85 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4),
-            color: Theme.of(context).accentColor,
-            shape: BoxShape.rectangle,
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                color: Colors.black,
-                blurRadius: 10,
-                offset: Offset(0.0, 10),
-              )
-            ]
-          ),
+              borderRadius: BorderRadius.circular(4),
+              color: Theme.of(context).accentColor,
+              shape: BoxShape.rectangle,
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black,
+                  blurRadius: 10,
+                  offset: Offset(0.0, 10),
+                )
+              ]),
           child: Row(
             children: <Widget>[
               Expanded(
-                child: Text(item.name, style: TextStyle(color: Colors.white, fontSize: 16),),
-            ),
+                child: Text(
+                  item.name,
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+                ),
+              ),
             ],
           ),
         ),
-        onDismissed: (DismissDirection d){
+        onDismissed: (DismissDirection d) {
           DB.delete(ToDoItem.table, item);
           refresh();
         },
       ),
     );
   }
-  
-  void _create(BuildContext context){
+
+  void _create(BuildContext context) {
     showDialog(
-      context: context,
-      builder: (BuildContext context){
-        return AlertDialog(
-          title: Text('Add Item'),
-          content: Form(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                TextField(
-                  autofocus: true,
-                  decoration: InputDecoration(labelText: 'Item name'),
-                  onChanged: (name){_name = name;},
-                ),
-              ],
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Add Item'),
+            content: Form(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  TextField(
+                    autofocus: true,
+                    decoration: InputDecoration(labelText: 'Item name'),
+                    onChanged: (name) {
+                      _name = name;
+                    },
+                  ),
+                ],
+              ),
             ),
-          ),
-          actions: <Widget>[
-            FlatButton(
-              onPressed: () => _save(),
-              child: Text("Save"),
+            actions: <Widget>[
+              FlatButton(
+                onPressed: () => _save(),
+                child: Text("Save"),
               )
-          ],
-        );
-      });
+            ],
+          );
+        });
   }
 
-  void _save() async{
+  void _save() async {
     Navigator.of(context).pop();
-    ToDoItem item = ToDoItem(
-      id: _id,
-      name: _name
-    );
-    
+    ToDoItem item = ToDoItem(id: _id, name: _name);
+
     await DB.insert(ToDoItem.table, item);
-    setState(() => _name = ''); 
-    refresh();    
+    setState(() => _name = '');
+    refresh();
   }
 
-  void initState(){
+  void initState() {
     refresh();
     super.initState();
   }
 
-  void refresh() async{
+  void refresh() async {
     List<Map<String, dynamic>> _results = await DB.query(ToDoItem.table);
     _todo = _results.map((item) => ToDoItem.fromMap(item)).toList();
     setState(() {});
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,12 +137,16 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.fromLTRB(20, 20, 0, 10),
-              child: Text('ToDo', style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold)),
-              ),
+              child: Text('ToDo',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold)),
+            ),
             ListView(
               children: _items,
               shrinkWrap: true,
-              ),
+            ),
           ],
         ),
       ),

@@ -94,5 +94,26 @@
       loadMainDartJs();
     }
   </script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+
+  <script>
+    // TODO: Replace the following with your app's Firebase project configuration.
+    // See: https://support.google.com/firebase/answer/7015592
+    var firebaseConfig = {
+      apiKey: "...",
+      authDomain: "pcs3100.firebaseapp.com",
+      databaseURL: "https://pcs3100.firebaseio.com",
+      projectId: "pcs3100",
+      storageBucket: "pcs3100.appspot.com",
+      messagingSenderId: "...",
+      appId: "1:...:web:...",
+      measurementId: "G-..."
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script src="main.dart.js" type="application/javascript"></script>
 </body>
 </html>
