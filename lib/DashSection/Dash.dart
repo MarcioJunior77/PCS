@@ -47,8 +47,17 @@ class DashboardScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
-                  flex: 2,
                   child: DetalhesMensagens(),
+                ),
+              ],
+            ),
+            SizedBox(height: 10),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child:
+                      DetalhesMensagens(), /* Colocar Mapa/Dados de Localização aqui */
                 ),
               ],
             )
