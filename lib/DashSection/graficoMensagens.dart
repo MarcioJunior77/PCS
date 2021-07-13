@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'Constantes.dart';
 
-class Chart extends StatelessWidget {
-  const Chart({
+class ChartMensagens extends StatelessWidget {
+  const ChartMensagens({
     Key? key,
   }) : super(key: key);
 
@@ -28,14 +28,14 @@ class Chart extends StatelessWidget {
               children: [
                 SizedBox(height: defaultPadding),
                 Text(
-                  "14",
+                  "600",
                   style: Theme.of(context).textTheme.headline4!.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                         height: 0.5,
                       ),
                 ),
-                Text("/ 38 Tarefas")
+                Text("/1000 em Grupo")
               ],
             ),
           ),

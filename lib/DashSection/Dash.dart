@@ -5,6 +5,7 @@ import 'Cabecalho.dart';
 import 'Responsividade.dart';
 import 'arqsRecentes.dart';
 import 'detalhesTarefas.dart';
+import 'detalhesMensagens.dart';
 
 class DashboardScreen extends StatelessWidget {
   @override
@@ -39,6 +40,16 @@ class DashboardScreen extends StatelessWidget {
                     flex: 2,
                     child: DetalhesTarefas(),
                   ),
+              ],
+            ),
+            SizedBox(height: 10),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: DetalhesMensagens(),
+                ),
               ],
             )
           ],
