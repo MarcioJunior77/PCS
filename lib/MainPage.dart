@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pcs/ChatSection/TopBar.dart';
 import 'package:pcs/To-do-list/Teste(n%C3%A3o%20mexer).dart';
 
+import 'DashSection/Mapas/Mapa.dart';
 import 'ChatSection/ChatPage.dart';
 import 'DashSection/Dash.dart';
 // import 'package:pcs/topBar.dart';
@@ -14,7 +15,11 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _pageSelector = 0;
-  final List<Widget> _sections = [Chat(), Test_to_do_list(), DashboardScreen()];
+  final List<Widget> _sections = [
+    FireMap(),
+    Test_to_do_list(),
+    DashboardScreen()
+  ];
 
   @override
   Widget build(BuildContext context) {
