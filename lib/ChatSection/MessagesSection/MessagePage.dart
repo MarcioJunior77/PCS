@@ -150,7 +150,7 @@ class _MessagePageState extends State<MessagePage> {
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.only(
                                 left: 15, bottom: 10, right: 15),
-                            hintText: "Digite aqui ...",
+                            hintText: "Digite ...",
                             hintStyle:
                                 TextStyle(color: Colors.white, fontSize: 18),
                             border: OutlineInputBorder(
@@ -167,6 +167,7 @@ class _MessagePageState extends State<MessagePage> {
                       height: 40,
                       margin: EdgeInsets.only(bottom: 20),
                       child: FloatingActionButton(
+                        //ENVIAR MSG
                         heroTag: "btn3",
                         onPressed: _incrementCounter,
                         child: Icon(
