@@ -5,6 +5,8 @@
 
     <users-permission android:name="android.permission.ACESS_FINE_LOCATION" />
 
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="16" />
+
    <application
         android:label="pcs"
         android:icon="@mipmap/ic_launcher">

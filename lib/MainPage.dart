@@ -15,11 +15,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _pageSelector = 0;
-  final List<Widget> _sections = [
-    FireMap(),
-    Test_to_do_list(),
-    DashboardScreen()
-  ];
+  final List<Widget> _sections = [Chat(), Test_to_do_list(), DashboardScreen()];
 
   @override
   Widget build(BuildContext context) {

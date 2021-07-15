@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:pcs/ChatSection/MessagesSection/TopBarMessage.dart';
 import 'package:pcs/ChatSection/MessagesSection/MessageDisplay.dart';
 import 'package:pcs/ChatSection/MessagesSection/MessagesDesign.dart';
+import 'package:pcs/globals.dart' as globals;
 
 enum MessageType {
   Sender,
@@ -14,7 +15,22 @@ enum MessageUser {
   Developer,
 }
 
-class MessagePage extends StatelessWidget {
+class MessagePage extends StatefulWidget {
+  const MessagePage({Key? key}) : super(key: key);
+
+  @override
+  _MessagePageState createState() => _MessagePageState();
+}
+
+class _MessagePageState extends State<MessagePage> {
+  double num = globals.counter;
+  void _incrementCounter() {
+    setState(() {
+      globals.counter++;
+    });
+    num = globals.counter;
+  }
+
   List<ChatMessage> chatMessage = [
     ChatMessage(
         name: "Roberto Assunção",
@@ -53,14 +69,7 @@ class MessagePage extends StatelessWidget {
         type: MessageType.Receiver,
         who: MessageUser.Developer),
   ];
-  // List<ChatMessage> chatMessage = [
-  //   ChatMessage(message: "Já Mandei os arquivos", type: MessageType.Receiver),
-  //   ChatMessage(message: "Já Mandei os arquivos", type: MessageType.Receiver),
-  //   ChatMessage(message: "Já Mandei os arquivos", type: MessageType.Receiver),
-  //   ChatMessage(message: "Já Mandei os arquivos", type: MessageType.Receiver),
-  //   ChatMessage(message: "Já Mandei os arquivos", type: MessageType.Receiver),
-  //   ChatMessage(message: "Já Mandei os arquivos", type: MessageType.Receiver),
-  // ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,6 +108,7 @@ class MessagePage extends StatelessWidget {
                       height: 40,
                       margin: EdgeInsets.only(bottom: 20),
                       child: FloatingActionButton(
+                        heroTag: "btn1",
                         onPressed: () {},
                         child: Icon(
                           Icons.add_rounded,
@@ -116,6 +126,7 @@ class MessagePage extends StatelessWidget {
                       height: 40,
                       margin: EdgeInsets.only(bottom: 20),
                       child: FloatingActionButton(
+                        heroTag: "btn2",
                         onPressed: () {},
                         child: Icon(
                           Icons.photo_camera_rounded,
@@ -139,7 +150,7 @@ class MessagePage extends StatelessWidget {
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.only(
                                 left: 15, bottom: 10, right: 15),
-                            hintText: "Digite um texto...",
+                            hintText: "Digite aqui ...",
                             hintStyle:
                                 TextStyle(color: Colors.white, fontSize: 18),
                             border: OutlineInputBorder(
@@ -156,7 +167,8 @@ class MessagePage extends StatelessWidget {
                       height: 40,
                       margin: EdgeInsets.only(bottom: 20),
                       child: FloatingActionButton(
-                        onPressed: () {},
+                        heroTag: "btn3",
+                        onPressed: _incrementCounter,
                         child: Icon(
                           Icons.send,
                           color: Colors.teal.shade400,
