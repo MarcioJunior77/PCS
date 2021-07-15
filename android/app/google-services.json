@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "106347877409",
+    "firebase_url": "https://pcs3100-default-rtdb.firebaseio.com",
     "project_id": "pcs3100",
     "storage_bucket": "pcs3100.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "106347877409-7dm46e90aqif80dgd21ba6la4lh2oerg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pcs",
+            "certificate_hash": "a32fe775ae6be0d40127c8984f5d21968ff2e641"
+          }
+        },
         {
           "client_id": "106347877409-deo1muvmcgt4lroim256jarltif7ueuo.apps.googleusercontent.com",
           "client_type": 3

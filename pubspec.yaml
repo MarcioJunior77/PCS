@@ -31,7 +31,10 @@ dependencies:
   #Firebase Integration
   firebase_core: ^1.3.0
   cloud_firestore: ^2.3.0
-  firebase_storage: ^9.0.0
+  # firebase_storage: ^9.0.0
+  google_sign_in: ^5.0.4
+  firebase_auth: ^2.0.0
+  shared_preferences: ^2.0.6
 
   #Dowload image
   http: ^0.13.3
@@ -48,8 +51,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   google_maps_flutter_web: ^0.3.0+2
-  geolocation: ^1.1.2
-  geolocator: ^7.2.0+1
 
 dev_dependencies:
   flutter_test:

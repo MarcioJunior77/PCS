@@ -36,8 +36,8 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.pcs"
-        minSdkVersion 14
-        targetSdkVersion 16
+        minSdkVersion 21
+        targetSdkVersion 30
         multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -62,9 +62,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     
     //Serviços Google
-    implementation 'com.google.android.gms:play-services-maps:17.0.1'
+    // implementation 'com.google.android.gms:play-services-maps:17.0.1'
     //Google Localizações
-    implementation 'com.google.android.gms:play-services-location:18.0.0'
+    // implementation 'com.google.android.gms:play-services-location:18.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

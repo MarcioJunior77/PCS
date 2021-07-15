@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class TopBar extends StatelessWidget with PreferredSizeWidget {
   @override
@@ -35,10 +36,6 @@ class TopBar extends StatelessWidget with PreferredSizeWidget {
                 color: Colors.white,
                 size: 20,
               ),
-              Text(
-                "Nova Sala",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              )
             ],
           ),
         ),

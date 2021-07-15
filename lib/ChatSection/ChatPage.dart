@@ -4,17 +4,47 @@ import 'package:pcs/ChatSection/Sections.dart';
 import 'package:pcs/ChatSection/SectionDisplay.dart';
 import 'package:pcs/ChatSection/GroupsDesign.dart';
 import 'package:pcs/ChatSection/GroupDisplay.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // import 'package:pcs/topBar.dart';
 // import 'package:pcs/Input.dart';
 class Chat extends StatefulWidget {
-  const Chat({Key? key}) : super(key: key);
+  final docs;
+
+  const Chat({Key? key, this.docs}) : super(key: key);
 
   @override
   _ChatState createState() => _ChatState();
 }
 
 class _ChatState extends State<Chat> {
+  String? groupChatId;
+  String? userID;
+
+  TextEditingController textEditingController = TextEditingController();
+
+  ScrollController scrollController = ScrollController();
+  @override
+  void initState() {
+    getGroupChatId();
+    super.initState();
+  }
+
+  getGroupChatId() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+
+    userID = sharedPreferences.getString("id");
+
+    String anotherUserId = widget.docs["id"];
+
+    if (userID!.compareTo(anotherUserId) > 0) {
+      groupChatId = "$userID - $anotherUserId";
+    } else {
+      groupChatId = "$anotherUserId - $userID";
+    }
+    setState(() {});
+  }
+
   List<ChatSections> chatSections0 = [
     ChatSections(
       text: "Seções de Software",
@@ -72,8 +102,6 @@ class _ChatState extends State<Chat> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //   appBar: ToppBar(),
-      //   body: Input(),
       backgroundColor: Colors.grey.shade900,
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
@@ -84,21 +112,23 @@ class _ChatState extends State<Chat> {
               padding: EdgeInsets.all(16),
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: "Search...",
-                  hintStyle: TextStyle(color: Colors.grey.shade600),
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: Colors.grey.shade600,
-                    size: 20,
-                  ),
-                  filled: true,
-                  fillColor: Colors.grey.shade200,
-                  contentPadding: EdgeInsets.all(8),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: BorderSide(color: Colors.grey.shade200),
-                  ),
-                ),
+                    contentPadding:
+                        EdgeInsets.only(left: 15, bottom: 10, right: 15),
+                    hintText: "Digite um texto...",
+                    hintStyle: TextStyle(
+                        color: Colors.grey.shade800,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(50)),
+                    fillColor: Colors.grey[200],
+                    filled: true),
               ),
             ),
             ListView.builder(
