@@ -12,11 +12,10 @@ class DetalhesMensagens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var num1 = globals.counter;
+    var num1 = 10 + globals.counter;
     double num2 = 20;
     double num3 = 10;
     double num4 = 30;
-    double num5 = 0;
     return Container(
       padding: EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
