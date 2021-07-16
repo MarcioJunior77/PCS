@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:pcs/ChatSection/MessagesSection/TopBarMessage.dart';
@@ -7,9 +7,9 @@ import 'package:pcs/ChatSection/MessagesSection/MessageDisplay.dart';
 import 'package:pcs/ChatSection/MessagesSection/MessagesDesign.dart';
 import 'package:pcs/globals.dart' as globals;
 import 'package:pcs/main.dart';
-import 'dart:async'; // new
 import 'package:cloud_firestore/cloud_firestore.dart'; // new
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 enum MessageType {
   Sender,
@@ -42,14 +42,56 @@ class _MessagePageState extends State<MessagePage> {
     });
   }
 
+  Future<void> init2() async {
+    await Firebase.initializeApp();
+
+    FirebaseAuth.instance.userChanges().listen((user) {
+      _chatSubscription = FirebaseFirestore.instance
+          .collection('chatbook')
+          .orderBy('timestamp', descending: true)
+          .snapshots()
+          .listen((snapshot) {
+        _chatMessages = [];
+        snapshot.docs.forEach((document) {
+          _chatMessages.add(
+            ChatMessage(
+              message: document.data()['text'],
+            ),
+          );
+        });
+        // notifyListeners();
+      });
+      // notifyListeners();
+    });
+  }
+
+  Future<void> init() async {
+    await Firebase.initializeApp();
+    _chatSubscription = FirebaseFirestore.instance
+        .collection('mensagens')
+        .orderBy('timestamp', descending: true)
+        .snapshots()
+        .listen((snapshot) {
+      _chatMessages = [];
+      snapshot.docs.forEach((document) {
+        print("Looks like I have ${document.data()}");
+        _chatMessages.add(
+          ChatMessage(
+            message: document.data()['text'],
+          ),
+        );
+      });
+    });
+  }
+
   StreamSubscription<QuerySnapshot>? _chatSubscription;
   List<ChatMessage> _chatMessages = [];
-  List<ChatMessage> get guestBookMessages => _chatMessages;
+  List<ChatMessage> get chatMessages => _chatMessages;
 
   // List<ChatMessage> chatMessage = [
   //   ChatMessage(
   //       name: "Roberto Assunção",
-  //       role: "Developer",
+  //       role: "Developer",j
   //       message: "Já Mandei os arquivos",
   //       type: MessageType.Receiver,
   //       who: MessageUser.Developer),
@@ -133,12 +175,15 @@ class _EnviarMsgState extends State<EnviarMsg> {
   final _formKey = GlobalKey<FormState>(debugLabel: '_EnviarMsgState');
   final _controller = TextEditingController();
   int x = 0;
+  int num1 = globals.counter2;
   int counter = 0;
 
   void _incrementCounter() {
     setState(() {
+      globals.counter2++;
       counter++;
     });
+    num1 = globals.counter2;
   }
 
   @override

@@ -36,18 +36,22 @@ dependencies:
   #Dowload image
   http: ^0.13.3
 
-  # For to-so-list section
-  sqflite: ^2.0.0+3
+  # For to-do-list section
+  # sqflite: ^1.1.7
+  # path_provider: ^1.3.0
 
   #Geolocalização
-  geoflutterfire: ^3.0.1
-  location: ^4.3.0
-  google_maps_flutter: ^2.0.6
+  # geoflutterfire: ^3.0.1
+  # location: ^4.3.0
+
+  # slidable
+  intl: ^0.17.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   google_maps_flutter_web: ^0.3.0+2
+  firebase_auth: ^2.0.0
 
 dev_dependencies:
   flutter_test:
