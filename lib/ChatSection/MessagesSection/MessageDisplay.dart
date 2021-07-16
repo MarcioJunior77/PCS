@@ -3,13 +3,13 @@ import 'package:flutter/cupertino.dart';
 
 import 'MessagePage.dart';
 
-class ChatMessage {
+class ChatMessage2 {
   String name;
   String role;
   String message;
   MessageType type;
   MessageUser who;
-  ChatMessage(
+  ChatMessage2(
       {required this.message,
       required this.who,
       required this.type,

@@ -21,7 +21,19 @@ enum MessageUser {
   Developer,
 }
 
-class MessagePage extends StatelessWidget {
+class ChatMessage {
+  ChatMessage({required this.message});
+  final String message;
+}
+
+class MessagePage extends StatefulWidget {
+  const MessagePage({Key? key}) : super(key: key);
+
+  @override
+  _MessagePageState createState() => _MessagePageState();
+}
+
+class _MessagePageState extends State<MessagePage> {
   FutureOr<DocumentReference> addMessageFire(String message, int counter) {
     return FirebaseFirestore.instance.collection('mensagens').add({
       'text': message,
@@ -29,6 +41,10 @@ class MessagePage extends StatelessWidget {
       'counter': counter,
     });
   }
+
+  StreamSubscription<QuerySnapshot>? _chatSubscription;
+  List<ChatMessage> _chatMessages = [];
+  List<ChatMessage> get guestBookMessages => _chatMessages;
 
   // List<ChatMessage> chatMessage = [
   //   ChatMessage(
