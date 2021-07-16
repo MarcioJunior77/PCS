@@ -78,7 +78,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
                         'Tarefas',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 40.0,
+                          fontSize: 30.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
