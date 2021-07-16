@@ -10,6 +10,7 @@ import 'Responsividade.dart';
 import 'arqsRecentes.dart';
 import 'detalhesTarefas.dart';
 import 'detalhesMensagens.dart';
+import 'Localizacao.dart';
 
 class DashboardScreen extends StatelessWidget {
   @override
@@ -61,7 +62,7 @@ class DashboardScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child:
-                      DetalhesMensagens(), /* Colocar Mapa/Dados de Localização aqui */
+                      Localizacao(), /* Colocar Mapa/Dados de Localização aqui */
                 ),
               ],
             )
