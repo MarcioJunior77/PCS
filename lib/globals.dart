@@ -1,3 +1,3 @@
 library my_prj.globals;
 
-double counter = 0;
+int counter2 = 0;

@@ -1,9 +1,14 @@
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:firebase_core/firebase_core.dart';
+import 'dart:async'; // new
+import 'package:cloud_firestore/cloud_firestore.dart'; // new
+import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:pcs/MainPage.dart';
 
+//teste
 void main() {
   runApp(MyApp());
 }

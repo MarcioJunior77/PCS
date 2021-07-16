@@ -11,7 +11,7 @@ class ChartMensagens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var num1 = 10 + globals.counter;
+    var num1 = 10 + globals.counter2;
     double num2 = 20;
     double num3 = 10;
     double num4 = 30;
@@ -21,7 +21,7 @@ class ChartMensagens extends StatelessWidget {
     List<PieChartSectionData> paiChartSelectionDatas = [
       PieChartSectionData(
         color: primaryColor,
-        value: num1,
+        value: num1.toDouble(),
         showTitle: false,
         radius: 25,
       ),
